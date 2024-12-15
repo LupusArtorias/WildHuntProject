@@ -16,7 +16,7 @@ themeToggleButton.addEventListener('click', () => {
 
 // Terminal-style name animation
 const nameElement = document.getElementById('name-animation');
-const names = ["Matteo Da Venezia", "Lupus Artorias"];
+const names = ["Matteo Da Venezia McCormack", "Lupus Artorias"];
 let index = 0;
 let letterIndex = 0;
 let currentName = '';
