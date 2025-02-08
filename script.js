@@ -14,9 +14,9 @@ themeToggleButton.addEventListener('click', () => {
   }
 });
 
-// Terminal-style name animation
+// Terminal-style name animation, welcome back to
 const nameElement = document.getElementById('name-animation');
-const names = ["Matteo Da Venezia McCormack", "Lupus Artorias"];
+const names = ["Matteo Lupus Da Venezia McCormack", "Lupus Artorias"];
 let index = 0;
 let letterIndex = 0;
 let currentName = '';

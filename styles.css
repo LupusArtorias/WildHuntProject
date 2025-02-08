@@ -44,7 +44,7 @@
   }
   
   body.light-mode nav {
-    background: #444;
+    background: #fff;
   }
   
   body.light-mode footer {
@@ -192,6 +192,11 @@ body.dark-mode #who-am-i {
   font-size: 1.5rem;
   color: #007BFF;
   font-family: "Courier New", monospace;
+  display: inline-block; /* Keeps the block stable */
+  min-width: 250px; /* Set a minimum width to prevent shrinking */
+  min-height: 1.2em; /* Ensures text height doesn't shrink */
+  text-align: center; /* Keeps text centered */
+  white-space: nowrap; /* Prevents breaking lines */
 }
 
 /* Flip Card Animation */
