@@ -14,7 +14,8 @@ themeToggleButton.addEventListener('click', () => {
   }
 });
 
-// Terminal-style name animation, welcome back to
+
+// NAME ANIMATION
 const nameElement = document.getElementById('name-animation');
 const names = ["Matteo Lupus Da Venezia McCormack", "Lupus Artorias"];
 let index = 0;
@@ -22,14 +23,25 @@ let letterIndex = 0;
 let currentName = '';
 let isDeleting = false;
 
+// Typing effect function
 function typeEffect() {
   currentName = names[index];
+
+  // Adjust font size for mobile devices
+  if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+    nameElement.style.fontSize = '1.2rem'; // Smaller font size for mobile devices
+  } else {
+    nameElement.style.fontSize = ''; // Reset to default for larger screens
+  }
+
+  // Typing effect logic
   if (isDeleting) {
     letterIndex--;
   } else {
     letterIndex++;
   }
 
+  
   nameElement.textContent = currentName.substring(0, letterIndex);
 
   if (!isDeleting && letterIndex === currentName.length) {
