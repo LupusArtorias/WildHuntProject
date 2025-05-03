@@ -298,6 +298,32 @@ body.dark-mode .contact-email:hover {
   color: #66b3ff;
 }
 
+/* Social Media Bar */
+.social-media-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(1) contrast(1); /* Ensure icons are clear */
+}
+
+.social-icon:hover img {
+  transform: scale(1.1);
+}
+
+body.dark-mode .social-icon img {
+  filter: brightness(0.8) contrast(1.2); /* Match dark mode image filter */
+}
 
   /* Core Foundations Grid Layout */
 .foundations-grid {
