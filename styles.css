@@ -516,6 +516,59 @@ body.dark-mode .attribution-list a:hover {
     padding: 1rem 0;
   }
   
+/* Challenge Page Banner Buttons */
+.challenge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+
+.challenge-banner {
+  background: #007BFF;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s, transform 0.3s;
+  width: 260px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.challenge-banner:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+}
+
+body.dark-mode .challenge-banner {
+  background: #1e90ff;
+  color: #fff;
+}
+
+body.dark-mode .challenge-banner:hover {
+  background: #66b3ff;
+}
+
+@media (min-width: 600px) {
+  .challenge-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
