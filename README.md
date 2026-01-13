@@ -1,92 +1,102 @@
-# 🐺⚔️ 𝙒𝙞𝙡𝙙 𝙃𝙪𝙣𝙩 𝙋𝙧𝙤𝙟𝙚𝙘𝙩 ⚔️🐺
+# 🐺 Wild Hunt Project
 
 ## 🌍 Overview
 
-The **Wild Hunt Project** is a **manifesto-driven initiative** to create **decentralized, open organizations** where **courageous**, **creative**, and **dedicated** individuals unite to **hunt down the world's problems**.
+The **Wild Hunt Project** is a **manifesto-driven initiative** focused on building **decentralised, open organisations** where people choose to work together to confront meaningful problems with care, intelligence, and responsibility.
 
-A **Wild Hunt Knight** exemplifies **purposeful action**, harnessing **intelligence 🧠**, **wisdom 🦉**, and **collaboration 🤝** to forge a **brighter future for humanity ✨**.
+It is not a company, platform, or movement in the traditional sense. It is a shared framework for **problem-hunting** — a way of thinking and acting that values collaboration over hierarchy, wisdom over noise, and long-term impact over short-term attention.
 
-This repository contains the **website** for the Wild Hunt Project, outlining its:
+A **Wild Hunt Problem-Hunter** is anyone who commits to purposeful action, guided by ethical judgement, respect for others, and a willingness to engage with complex challenges without domination or spectacle.
 
-- 🧭 Vision  
-- 📜 Manifest  
-- 🧱 Core Foundations  
-- 📣 Call to Action  
-
-It’s built with **HTML, CSS, and JavaScript** and features a **responsive design** with **light 🌞 and dark 🌚 mode** support.
+This repository contains the **official website** for the Wild Hunt Project, including its manifesto, core foundations, and invitation to walk the path.
 
 ---
 
-## 🎯 Project Purpose
+## 🎯 Purpose
 
-The Wild Hunt Project aims to:
+The Wild Hunt Project exists to:
 
-- 🤝 **Unite individuals** to tackle global challenges through **decentralized collaboration**
-- ⚖️ **Promote ethical, legal, and moral** problem-solving with a focus on the **greater good**
-- 🔥 **Inspire action** through a **clear manifesto** and **core foundations** that guide **Wild Hunt Knights**
+- Support **decentralised collaboration** around real-world problems  
+- Encourage **ethical, legal, and responsible action**  
+- Promote **thoughtful innovation** grounded in learning and experimentation  
+- Enable individuals and small teams to act without gatekeeping or permission  
 
-> _"The Wild Hunt Project serves as a manifesto for creating decentralized, open organizations where courageous, creative, and dedicated individuals unite to hunt down the world's problems."_
+The project does not promise easy answers. It provides a **moral and practical framework** for people who are willing to stay with difficult problems and address them with care.
 
 ---
 
 ## 🗂️ Repository Structure
 
-Here’s what you’ll find in this repo:
+This repository contains a static website built with simplicity and longevity in mind.
 
-- `📄 index.html` – Main webpage: About, Who Am I?, The Wild Hunt Manifest, Core Foundations, Walk the Path  
-- `📄 attributions.html` – Icon sources and credits  
-- `🎨 styles.css` – Responsive design with light/dark mode  
-- `⚙️ script.js` – Dynamic features: theme toggling, name animation  
-- `🖼️ images/` – Logos, icons, and assets  
-- `📘 README.md` – This overview & setup guide
+- `index.html` – Main site: Overview, Manifesto, Core Foundations, Walk the Path  
+- `attributions.html` – Credits and icon attributions  
+- `styles.css` – Responsive layout with light and dark mode  
+- `script.js` – Behavioural logic (theme toggle, accessibility helpers)  
+- `images/` – Logos and visual assets  
+- `README.md` – Project overview and orientation
 
 ---
 
-## ⚔️ The Wild Hunt Manifest
+## 📜 The Manifesto
 
-The **manifest** (in `index.html`) defines the guiding principles of **Wild Hunt Knights**:
+The Wild Hunt manifesto defines the ethical boundaries and working philosophy of problem-hunting.
 
-- 🛡️ **Purpose with Responsibility** – Serve the greater good without harm  
-- 🕊️ **Solutions Without Fear** – Uphold freedom & dignity  
-- ⚖️ **Legality, Ethics, Morality** – Guided by strong principles  
-- 🧘 **Balanced Action** – Avoid chaos; weigh short vs long term  
-- 🙇 **Humility Over Pride** – Prioritize outcomes over ego  
-- 🕊️ **Preservation of Freedom** – Maintain independence  
-- ❌ **Zero Tolerance for Unethical Conduct** – Integrity is non-negotiable  
-- 📚 **Learn from History** – Draw wisdom from past lessons
+Key principles include:
+
+- **Purpose with Responsibility**  
+  Reduce harm while carefully considering consequences.
+
+- **Solutions Without Fear or Domination**  
+  Uphold freedom, dignity, and agency in all actions.
+
+- **Lawful and Ethical Action**  
+  Operate within legal and moral boundaries with accountability.
+
+- **Balanced Response**  
+  Address urgent needs without creating long-term harm.
+
+- **Humility Over Ego**  
+  Focus on outcomes, not recognition.
+
+- **Sustainable Independence**  
+  Protect personal well-being and autonomy.
+
+- **Clear Governance**  
+  Illegal, unethical, or immoral conduct is incompatible with participation.
+
+- **Learning from History**  
+  Apply past lessons thoughtfully to present challenges.
 
 ---
 
 ## 🧱 Core Foundations
 
-The Wild Hunt stands on **three powerful foundations**:
+The Wild Hunt Project rests on three interconnected foundations:
 
-### 🤝 Astutia – *Collaboration and Community*
+### Astutia — Collaboration and Community
 
-- Support and share solutions  
-- Work with diverse individuals  
-- Build communities to tackle root causes
+Astutia values shared understanding and collective effort. Problem-Hunters work openly across disciplines and backgrounds, building trust-based communities capable of addressing systemic and global challenges.
 
-### 🛡️ Ferocies – *Protect and Act*
+### Ferocies — Protect and Act
 
-- Defend humanity from harm  
-- Take decisive action  
-- Address root causes for lasting change
+Ferocies is the resolve to act when inaction would cause harm. It balances urgency with restraint, focusing on protecting people now while addressing root causes to reduce future risk.
 
-### 🧠 Sapientes – *Wisdom and Innovation*
+### Sapientes — Wisdom and Innovation
 
-- Invent creative, sustainable ideas  
-- Modernize outdated methods  
-- Learn, experiment, and improve
+Sapientes represents disciplined thinking and responsible innovation. Problem-Hunters combine knowledge, experimentation, and reflection to create sustainable solutions and continuously improve their methods.
 
 ---
 
-## 🛤️ Joining the Wild Hunt
+## 🛤️ Walk the Path
 
-Everyone aligned with the vision is welcome. Here's how to join:
+Participation in the Wild Hunt Project is **voluntary and open**.  
+There are no applications, memberships, or approvals.
 
-- 🪶 **No formal process** – No forms, no gatekeeping; just alignment  
-- 🕵️ **Public or Anonymous** – Join openly or use a pseudonym  
-- ❤️ **Dedication matters** – Commitment to the mission defines a Knight
+If the purpose and principles resonate with you, you are already on the path.
 
-> _"Brothers and Sisters of the Wild Hunt, see you on the path!"_
+You may associate publicly with the project or remain private under a chosen name. Some problem-hunters work alone, others form teams. What matters is not visibility, but intent and conduct.
+
+The project asks for responsibility, not allegiance.
+
+_No banners. No masters. Just the road, the work, and the will to see it through._ ❤️
