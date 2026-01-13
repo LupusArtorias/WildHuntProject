@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Hunt — A Hunt of Fire and Fury</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  </head>
+<body class="light-mode">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container">
+      <h1>Medicine Hunt</h1>
+      <p>Innovate and heal with insight, courage, and fire.</p>
+      <button id="theme-toggle" class="btn toggle-btn" type="button">Switch to Dark Mode</button>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container">
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false">Menu</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="challenge.html">🔥 Fire and Fury</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section id="medicine-intro">
+      <div class="container" style="text-align: center; padding: 1rem;">
+        <h2>Medicine Challenges</h2>
+        <p>Explore the vital questions and innovations in modern medicine.</p>
+      </div>
+    </section>
+
+    <section id="medicine-challenges">
+      <button class="collapsible-banner">🩺 Medicine Challenges</button>
+      <div class="problem-list">
+        <ul>
+          <li>👩‍⚕️ <strong>Design a Comprehensive Patient Care Plan</strong><br>
+            Create a patient care plan for a chronic illness with multidisciplinary collaboration. Integrate medical disciplines to manage physical, emotional, and social well-being. Monitor progress and improve quality of life.</li>
+
+          <li>🏥 <strong>Develop a Nurse-Driven Early Warning System</strong><br>
+            Design an early warning system (EWS) nurses can use to identify patients at risk of deterioration. Incorporate vital signs, history, and clinical markers for timely action and integration into workflow.</li>
+
+          <li>🩺 <strong>Create an Emergency Response Protocol</strong><br>
+            Develop a mass casualty emergency protocol prioritizing triage, resource allocation, and communication among doctors, nurses, paramedics, and other healthcare professionals.</li>
+
+          <li>🩹 <strong>Design a Post-Surgery Recovery Program</strong><br>
+            Create a comprehensive recovery program addressing pain management, physical therapy, wound care, patient education, and mental health support to reduce complications and readmissions.</li>
+
+          <li>🧠 <strong>Develop a Telemedicine Strategy</strong><br>
+            Design a telemedicine plan to improve healthcare access in rural or underserved areas. Address internet, patient education, and coordination with local facilities for various care services.</li>
+
+          <li>💉 <strong>Create a Pediatric Pain Management Protocol</strong><br>
+            Develop a protocol for acute and chronic pediatric pain management including medication, non-pharmacological interventions, and age-appropriate communication to ensure safety and efficacy.</li>
+
+          <li>💊 <strong>Create a Nurse-Doctor Collaborative Model</strong><br>
+            Design a collaborative care model enhancing communication, decision-making, and teamwork between nurses and doctors to improve hospital patient care and health outcomes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="submissions" style="text-align: center; padding: 2rem 0;">
+      <div class="container">
+        <h2>📬 Share Your Solutions</h2>
+        <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+          Your solutions are welcome in any form—research papers, prototypes, artwork, videos, or stories. We celebrate creativity and innovation.
+        </p>
+        <p style="margin-top: 1rem; font-size: 1.05rem;">
+          Submit via email at <a href="mailto:lupusartorias@gmail.com" class="contact-email">lupusartorias@gmail.com</a> or share your brilliance on social media with the hashtag <strong>#WildHuntChallenge2025</strong>.
+        </p>
+        <p style="margin-top: 1rem; font-style: italic; color: #555;">
+          The world needs healers and innovators, the problem hunters of tomorrow.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024-2025 Wild Hunt Project. All Rights Reserved.</p>
+      <p>Long live the Wild Hunt Project!</p>
+    </div>
+  </footer>
+
+  <script>
+    const banner = document.querySelector('.collapsible-banner');
+    banner.addEventListener('click', () => {
+      const list = banner.nextElementSibling;
+      list.classList.toggle('open');
+    });
+  </script>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

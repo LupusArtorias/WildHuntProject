@@ -7,28 +7,30 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light-mode">
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container">
       <h1>Wild Hunt Project</h1>
       <p>Hunting Problems, Improving Humankind.</p>
-      <button id="theme-toggle" class="btn toggle-btn">Switch to Dark Mode</button>
+      <button id="theme-toggle" class="btn toggle-btn" type="button">Switch to Dark Mode</button>
     </div>
   </header>
 
-  <nav>
-
+  <nav class="site-nav" aria-label="Primary">
     <div class="container">
-      <ul>
+      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false">Menu</button>
+      <ul id="nav-links" class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#creed">The Manifest</a></li>
         <li><a href="#foundations">Core Foundations</a></li>
         <li><a href="#join">Walk the Path</a></li>
-        <li><a href="challenge.html">🔥 A Hunt of Fire and Fury 🔥</a></li>
+        <li><a href="challenges/index.html">Challenges</a></li>
+        <li><a href="past/index.html">Past challenges</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
+  <main id="main">
 
     <figure class="logo-container">
       <img src="images/WHP_LOGO_PROTOTYPE2.png" alt="Wild Hunt Project Logo" class="logo">
@@ -38,12 +40,10 @@
     <section id="about">
       <div class="container">
         <h2>About the Wild Hunt Project</h2>
-        <p>The Wild Hunt Project serves as a manifesto for creating decentralized, open organizations where courageous, creative, 
-          and dedicated individuals unite to hunt down the world's problems. 
-          A Wild Hunt Knight exemplifies purposeful action, harnessing intelligence, wisdom, 
-          and collaboration to forge a brighter future for humanity. 
-          This manifesto lays out the core principles and framework for those inspired 
-          to embark on this noble mission and assemble their own problem-hunting teams.</p>
+        <p>The Wild Hunt Project is a manifesto for action. It exists to support the creation of decentralised, 
+          open organisations where people from many backgrounds come together to hunt down the world’s hardest problems. 
+          A Wild Hunt Problem-Hunter is anyone who chooses purposeful action, blending curiosity, intelligence, wisdom, and collaboration to turn ideas into solutions. 
+          This manifesto offers a clear framework for those who wish to form problem-hunting teams and take part in shaping a more thoughtful, humane future.</p>
       </div>
     </section>
 
@@ -55,10 +55,10 @@
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src="images/me1.jpg" alt="Picture of Me 1">
+                <img src="images/me1.jpeg" alt="Picture of Me 1">
               </div>
               <div class="flip-card-back">
-                <img src="images/me2.jpg" alt="Picture of Me 2">
+                <img src="images/me2.jpeg" alt="Picture of Me 2">
               </div>
             </div>
           </div>
@@ -68,21 +68,21 @@
             <h3>
               <span id="name-animation"></span>
             </h3>
-            <p>&#128187; I&apos;m a Venetian-Irish problem-hunter who left my hometown of Venice, Italy to pursue studies in computer science and cybersecurity in Dublin, Ireland. My mission is to make the world a better place through knowledge and action.</p>
-            <p>&#128058; My friends in Italy call me <strong>Wolf</strong> because I began hunting problems early in life and found a deep passion for it.</p>
-            <p>&#128218; While I love Computer Science and Physics, I take a polymath approach to knowledge, combining science and humanistic disciplines like History and Literature to craft fascinating solutions to problems.</p>
-            <p>&#129299; Some of my geeky hobbies include: Cooking(Italian at heart), Books, Video games, Streaming, Chess, and Puzzles. You know, the usual geek stuff.</p>
-            <p><em>"A hero is just someone that doesn't give up" — &#128375; Spider-Man</em></p>
+            <p>&#128187; I am a Venetian–Irish problem-hunter who left Venice (Italy) to study computer science and cybersecurity in Dublin. That move was less about geography and more about direction: I am driven by the belief that knowledge, when paired with deliberate action, can genuinely improve the world we share.</p>
+            <p>&#128058; Friends in Italy started calling me Wolf long before it became an identity I embraced. I was always drawn to problems early, not as obstacles, but as things worth tracking, understanding, and patiently working through. The name stuck because the instinct did.</p>
+            <p>&#128218; While my formal work lives in computer science and cybersecurity, my thinking does not stay neatly inside disciplinary borders. I take a polymath approach to problem-hunting, drawing equally from physics, history, literature, and the human stories behind systems. The most interesting solutions, in my experience, emerge where technical rigour meets cultural and historical understanding.</p>
+            <p>&#129299; Outside the work, I recharge the same way many curious minds do: cooking food that reminds me where I come from, reading widely, playing games that reward strategy and patience, and losing time to puzzles, chess, and the occasional stream. These are not distractions; they are training grounds for attention, creativity, and perspective.</p>
+            <p><em>I hold close a simple idea, borrowed from the fictional character of Spider-Man but grounded in reality: "A hero is just someone who does not give up." Problem-hunting, to me, is not about bravado or brilliance. It is about staying with a problem long enough to do right by it. &#128375;</em></p>
           </div>
         </div>
         <!-- Contact Email -->
     <div class="contact-details">
-      <p>Feel free to reach out to me fellow humans: <a href="mailto:lupusartorias@gmail.com" class="contact-email">lupusartorias@gmail.com</a></p>
+      <p>Feel free to reach out to me fellow problem-hunters: <a href="mailto:lupusartorias@gmail.com" class="contact-email">lupusartorias@gmail.com</a></p>
       <div class="social-media-bar">
-        <a href="https://www.instagram.com/lupus_artorias?igsh=aHhsaTc4b2tuMDBl&utm_source=qr" target="_blank" class="social-icon" title="Instagram">
+        <a href="https://www.instagram.com/lupus_artorias?igsh=aHhsaTc4b2tuMDBl&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
           <img src="images/instagram-icon.png" alt="Instagram Icon">
         </a>
-        <a href="https://ie.linkedin.com/in/matteo-da-venezia" target="_blank" class="social-icon" title="LinkedIn">
+        <a href="https://ie.linkedin.com/in/matteo-da-venezia" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
           <img src="images/linkedin-icon.png" alt="LinkedIn Icon">
         </a>
       </div>
@@ -98,42 +98,42 @@
             <div class="creed-item">
               <img src="images/Responsibility.png" alt="Logo for responsibility">
               <strong>Purpose with Responsibility:</strong>
-              <p>A Wild Hunt Knight seeks to reduce or eliminate chaos caused by problems while carefully considering the consequences of their actions. Solutions must serve the greater good without unintended harm.</p>
+              <p>A Wild Hunt Problem-Hunter works to reduce harm and complexity created by unresolved problems, while remaining mindful of consequences. Action is guided by care, foresight, and an understanding that even well-intentioned solutions can create new risks. Progress is measured not only by what is fixed, but by what is protected in the process.</p>
             </div>
             <div class="creed-item">
               <img src="images/fear.png" alt="Logo for fear">
               <strong>Solutions Without Fear:</strong>
-              <p>The art of problem-hunting must never create fear or dominate others. A Wild Hunt Knight upholds freedom and dignity for all.</p>
+              <p>The practice of problem-hunting must never rely on fear, coercion, or domination. A Wild Hunt Problem-Hunter respects the freedom, dignity, and agency of others, recognising that lasting solutions cannot be built through control or intimidation.</p>
             </div>
             <div class="creed-item">
               <img src="images/compass.png" alt="Logo for compass">
               <strong>Legality, Ethics, and Morality:</strong>
-              <p>A Wild Hunt Knight operates within the law, guided by a strong ethical and moral compass, ensuring justice and fairness in all endeavors.</p>
+              <p>A Wild Hunt Problem-Hunter acts within the law and is guided by a considered ethical compass. Decisions are made with respect for justice, fairness, and accountability, recognising that responsible action requires both moral judgement and restraint.</p>
             </div>
             <div class="creed-item">
               <img src="images/scale.png" alt="Logo for a scale">
               <strong>Balanced Action:</strong>
-              <p>Extreme measures can lead to more chaos. A Wild Hunt Knight evaluates all options to create solutions that balance immediate needs and long-term impacts.</p>
+              <p>Urgency does not justify recklessness. A Wild Hunt Problem-Hunter weighs multiple options, seeking solutions that address immediate needs while accounting for long-term consequences and systemic effects.</p>
             </div>
             <div class="creed-item">
               <img src="images/humility.png" alt="Logo for humility">
               <strong>Humility Over Pride:</strong>
-              <p>Pride and ego have no place in problem-hunting. A Wild Hunt Knight remains humble and does whatever is necessary within ethical, moral, and legal boundaries to address issues effectively.</p>
+              <p>Pride and ego have no place in problem-hunting. A Wild Hunt Problem-Hunter acts with humility, choosing effective responses while remaining firmly within ethical, moral, and legal boundaries.</p>
             </div>
             <div class="creed-item">
               <img src="images/freedom.png" alt="Logo for freedom">
               <strong>Preservation of Freedom:</strong>
-              <p>A Wild Hunt Knight maintains their independence, ensuring that the mission to hunt problems does not consume or restrict their personal life.</p>
+              <p>A Wild Hunt Problem-Hunter maintains personal independence and balance, ensuring that the work of problem-hunting does not overwhelm or diminish their life beyond the mission.</p>
             </div>
             <div class="creed-item">
               <img src="images/ethics.png" alt="Logo for ethics">
               <strong>Zero Tolerance for Unethical Conduct:</strong>
-              <p>Any Knight who resorts to illegal, unethical, or immoral methods is automatically banned from the Wild Hunt Project, with all ties severed.</p>
+              <p>Any Problem-Hunter who engages in illegal, unethical, or immoral conduct cannot remain part of the Wild Hunt Project. Participation is withdrawn to protect the integrity of the mission, the safety of others, and the values the project exists to uphold.</p>
             </div>
             <div class="creed-item">
               <img src="images/museum.png" alt="Logo for history">
               <strong>Learn from History:</strong>
-              <p>A Wild Hunt Knight seeks wisdom from the past, learning from the successes and failures of those who came before us to craft innovative solutions for today&apos;s challenges.</p>
+              <p>A Wild Hunt Problem-Hunter draws insight from history, examining what has worked and what has failed before, and applies those lessons with creativity and care to today’s problems.</p>
             </div>
           </div>
         </div>
@@ -146,29 +146,34 @@
             <div class="foundation-item">
               <img src="images/astutia.png" alt="icon for cunningness color symbol">
               <h3>Astutia - Collaboration and Community</h3>
-              <ul>
-                <li>Support and share solutions to problems.</li>
-                <li>Collaborate with diverse individuals to achieve greater impact.</li>
-                <li>Build communities dedicated to addressing systemic and global challenges.</li>
-              </ul>
+              <p>
+                Astutia is the practice of working together with intention. Wild Hunt Problem-Hunters share solutions openly, not to claim credit, 
+                but to strengthen collective understanding and reduce duplicated effort. 
+                Collaboration across backgrounds, disciplines, and perspectives is treated as a necessity rather than a virtue, 
+                because complex problems rarely yield to isolated thinking. Through this shared work, communities are formed around responsibility and trust, 
+                capable of addressing systemic and global challenges with resilience rather than fragmentation.
+              </p>
             </div>
             <div class="foundation-item">
               <img src="images/ferocity.png" alt="icon for ferocity color symbol">
               <h3>Ferocies - Protect and Act</h3>
-              <ul>
-                <li>Defend humankind from pressing and emerging threats.</li>
-                <li>Act decisively to save those impacted by problems.</li>
-                <li>Protect humanity's future by addressing root causes of problems.</li>
-              </ul>
+              <p>
+                Ferocies is the commitment to act when inaction would cause harm. 
+                Wild Hunt Problem-Hunters respond to pressing and emerging threats with clarity and resolve, 
+                prioritising the protection of people over hesitation or performative caution. Action is taken to reduce suffering in the present, 
+                while remaining focused on addressing root causes so that protection today does not create greater risk tomorrow. 
+                Ferocies is not recklessness; it is the courage to intervene thoughtfully when it matters most.
+              </p>
             </div>
             <div class="foundation-item">
               <img src="images/wisdom.png" alt="icon for wisdom color symbol">
               <h3>Sapientes - Wisdom and Innovation</h3>
-              <ul>
-                <li>Invent creative and sustainable solutions to problems.</li>
-                <li>Innovate existing methods to adapt to modern problems.</li>
-                <li>Continuously improve problem-hunting techniques through knowledge and experimentation.</li>
-              </ul>
+              <p>
+                Sapientes is the practice of thinking deeply before acting boldly. 
+                Wild Hunt Problem-Hunters pursue creative and sustainable solutions by combining knowledge, experimentation, and reflection. 
+                Innovation is treated not as disruption for its own sake, but as the careful evolution of methods in response to new evidence and changing conditions. 
+                Through continuous learning, testing, and revision, problem-hunting techniques improve over time rather than stagnate.
+              </p>
             </div>
           </div>
         </div>
@@ -178,12 +183,12 @@
       <section id="join">
         <div class="container">
           <h2>Walk the Path</h2>
-          <p>Joining the Wild Hunt Project is simple and open to anyone who resonates with its values. It is a voluntary association, there are no forms to fill out, no gates to pass through.</p>
-          <p>If you feel aligned with the purpose, manifest, and core foundations, you are already on the path. You may associate yourself with the project publicly, such as through a social media tag, or remain anonymous under a chosen handle or pseudonym. Real identities are not required, your dedication to the Hunt is what counts.</p>
-          <p>Whether you walk alone or as part of a group, what matters is your intent to hunt problems, uplift humanity, and uphold the principles of the Wild Hunt Project.</p>
-  
+          <p>Joining the Wild Hunt Project is simple and open to anyone who feels aligned with its values. There are no applications to submit and no barriers to entry. Participation is voluntary, self-directed, and shaped by the responsibility each person chooses to take on.</p>
+          <p>If the purpose, principles, and core foundations resonate with you, you are already on the path. You may associate yourself with the project publicly, for example through a social media tag, or remain private under a chosen name. Real-world identities are not required; what matters is how you act and the care you bring to the work.</p>
+          <p>You may walk alone or alongside others. Some problem-hunters form teams, some contribute quietly, and some move between both. What unites them is a shared intent to address problems thoughtfully, uplift humanity, and uphold the values of the Wild Hunt Project.</p>
+          <p>This path is not about belonging to a group, but about choosing a way of working in the world.</p>
           <div class="join-manifest">
-            <p><em>Brothers and Sisters of the Wild Hunt, see you on the path!</em></p>
+            <p><em>The road is shared, the burdens differ, and the Hunt goes on.</em> ❤️</p>
           </div>
         </div>
       </section>
@@ -194,7 +199,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024-2025 Wild Hunt Project. All Rights Reserved.</p>
+      <p>&copy; 2024-2026 Wild Hunt Project. All Rights Reserved.</p>
       <p>Long live the Wild Hunt Project!</p>
       <p><a href="attributions.html">Icon Attributions</a></p>
     </div>
