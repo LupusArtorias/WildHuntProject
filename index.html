@@ -1,211 +1,2150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wild Hunt Project</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="light-mode">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <div class="container">
-      <h1>Wild Hunt Project</h1>
-      <p>Hunting Problems, Improving Humankind.</p>
-      <button id="theme-toggle" class="btn toggle-btn" type="button">Switch to Dark Mode</button>
-    </div>
-  </header>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="./support.js"></script>
+    </head>
+    <body>
+        <x-dc>
+            <helmet>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossorigin
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+                    rel="stylesheet"
+                />
+                <style>
+                    html {
+                        scroll-behavior: smooth;
+                    }
+                    body {
+                        margin: 0;
+                        background: #06080f;
+                        color: #c7d0e2;
+                        font-family: "Hanken Grotesk", system-ui, sans-serif;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        --accent: #9fb6e0;
+                    }
+                    ::selection {
+                        background: rgba(159, 182, 224, 0.26);
+                        color: #eaf0fb;
+                    }
+                    a {
+                        color: inherit;
+                    }
+                    @keyframes whp-blink {
+                        0%,
+                        49% {
+                            opacity: 1;
+                        }
+                        50%,
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+                    @keyframes whp-drift {
+                        from {
+                            transform: translateY(0);
+                        }
+                        to {
+                            transform: translateY(-46px);
+                        }
+                    }
+                    @keyframes whp-twinkle {
+                        0%,
+                        100% {
+                            opacity: 0.45;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes whp-float {
+                        0%,
+                        100% {
+                            transform: translateY(0);
+                        }
+                        50% {
+                            transform: translateY(9px);
+                        }
+                    }
+                    @keyframes whp-spin {
+                        from {
+                            transform: rotate(0);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
+            </helmet>
 
-  <nav class="site-nav" aria-label="Primary">
-    <div class="container">
-      <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false">Menu</button>
-      <ul id="nav-links" class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#creed">The Manifest</a></li>
-        <li><a href="#foundations">Core Foundations</a></li>
-        <li><a href="#join">Walk the Path</a></li>
-        <li><a href="challenges/index.html">Challenges</a></li>
-        <li><a href="past/index.html">Past challenges</a></li>
-      </ul>
-    </div>
-  </nav>
+            <div style="position: relative; overflow: hidden">
+                <!-- ===== NAV ===== -->
+                <nav
+                    style="
+                        position: sticky;
+                        top: 0;
+                        z-index: 50;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        padding: 16px clamp(20px, 5vw, 64px);
+                        background: rgba(6, 8, 15, 0.72);
+                        backdrop-filter: blur(14px);
+                        border-bottom: 1px solid rgba(159, 182, 224, 0.1);
+                    "
+                >
+                    <a
+                        href="#top"
+                        style="
+                            display: flex;
+                            align-items: center;
+                            gap: 11px;
+                            text-decoration: none;
+                        "
+                    >
+                        <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 100 100"
+                            aria-hidden="true"
+                            style="display: block"
+                        >
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="40"
+                                fill="none"
+                                style="stroke: var(--accent)"
+                                stroke-width="2"
+                                opacity="0.7"
+                            ></circle>
+                            <path
+                                d="M50 16 L55 45 L84 50 L55 55 L50 84 L45 55 L16 50 L45 45 Z"
+                                style="fill: var(--accent)"
+                                opacity="0.92"
+                            ></path>
+                        </svg>
+                        <span
+                            style="
+                                font-family:
+                                    &quot;Cormorant Garamond&quot;, serif;
+                                font-size: 21px;
+                                font-weight: 600;
+                                letter-spacing: 0.01em;
+                                color: #eaf0fb;
+                            "
+                            >Wild Hunt</span
+                        >
+                    </a>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            gap: clamp(14px, 2.4vw, 34px);
+                            flex-wrap: wrap;
+                            font-family:
+                                &quot;Spline Sans Mono&quot;, monospace;
+                            font-size: 12px;
+                            letter-spacing: 0.16em;
+                            text-transform: uppercase;
+                        "
+                    >
+                        <a
+                            href="#about"
+                            style="
+                                text-decoration: none;
+                                color: #94a0b8;
+                                padding: 4px 0;
+                                border-bottom: 1px solid transparent;
+                            "
+                            style-hover="color:#EAF0FB; border-bottom:1px solid var(--accent);"
+                            >About</a
+                        >
+                        <a
+                            href="#creed"
+                            style="
+                                text-decoration: none;
+                                color: #94a0b8;
+                                padding: 4px 0;
+                                border-bottom: 1px solid transparent;
+                            "
+                            style-hover="color:#EAF0FB; border-bottom:1px solid var(--accent);"
+                            >Manifest</a
+                        >
+                        <a
+                            href="#foundations"
+                            style="
+                                text-decoration: none;
+                                color: #94a0b8;
+                                padding: 4px 0;
+                                border-bottom: 1px solid transparent;
+                            "
+                            style-hover="color:#EAF0FB; border-bottom:1px solid var(--accent);"
+                            >Foundations</a
+                        >
+                        <a
+                            href="#join"
+                            style="
+                                text-decoration: none;
+                                color: #94a0b8;
+                                padding: 4px 0;
+                                border-bottom: 1px solid transparent;
+                            "
+                            style-hover="color:#EAF0FB; border-bottom:1px solid var(--accent);"
+                            >Walk the Path</a
+                        >
+                    </div>
+                </nav>
 
-  <main id="main">
+                <!-- ===== HERO ===== -->
+                <header
+                    id="top"
+                    style="
+                        position: relative;
+                        min-height: 92vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        padding: clamp(60px, 12vh, 120px) clamp(20px, 5vw, 64px)
+                            clamp(72px, 10vh, 120px);
+                        overflow: hidden;
+                    "
+                >
+                    <!-- moon glow -->
+                    <div
+                        aria-hidden="true"
+                        style="
+                            position: absolute;
+                            inset: 0;
+                            background:
+                                radial-gradient(
+                                    900px 460px at 50% -8%,
+                                    rgba(159, 182, 224, 0.13),
+                                    transparent 70%
+                                ),
+                                radial-gradient(
+                                    600px 600px at 80% 110%,
+                                    rgba(110, 128, 158, 0.1),
+                                    transparent 70%
+                                );
+                            pointer-events: none;
+                        "
+                    ></div>
+                    <!-- starfield -->
+                    <div
+                        data-starfield
+                        aria-hidden="true"
+                        style="
+                            position: absolute;
+                            inset: -10% -10% -10% -10%;
+                            pointer-events: none;
+                            animation: whp-twinkle 6s ease-in-out infinite;
+                        "
+                    >
+                        <div
+                            style="
+                                position: absolute;
+                                inset: 0;
+                                animation: whp-drift 26s linear infinite
+                                    alternate;
+                                background-image:
+                                    radial-gradient(
+                                        1.4px 1.4px at 12% 22%,
+                                        rgba(201, 210, 227, 0.9),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.2px 1.2px at 78% 16%,
+                                        rgba(201, 210, 227, 0.8),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.6px 1.6px at 30% 70%,
+                                        rgba(201, 210, 227, 0.85),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.1px 1.1px at 64% 60%,
+                                        rgba(201, 210, 227, 0.7),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.3px 1.3px at 88% 78%,
+                                        rgba(201, 210, 227, 0.8),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.2px 1.2px at 46% 32%,
+                                        rgba(201, 210, 227, 0.75),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1.5px 1.5px at 18% 84%,
+                                        rgba(201, 210, 227, 0.8),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 56% 88%,
+                                        rgba(201, 210, 227, 0.6),
+                                        transparent
+                                    );
+                            "
+                        ></div>
+                        <div
+                            style="
+                                position: absolute;
+                                inset: 0;
+                                opacity: 0.6;
+                                animation: whp-drift 40s linear infinite
+                                    alternate;
+                                background-image:
+                                    radial-gradient(
+                                        1px 1px at 24% 12%,
+                                        rgba(159, 182, 224, 0.7),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 70% 40%,
+                                        rgba(159, 182, 224, 0.6),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 40% 54%,
+                                        rgba(159, 182, 224, 0.6),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 90% 28%,
+                                        rgba(159, 182, 224, 0.55),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 8% 48%,
+                                        rgba(159, 182, 224, 0.6),
+                                        transparent
+                                    ),
+                                    radial-gradient(
+                                        1px 1px at 60% 8%,
+                                        rgba(159, 182, 224, 0.5),
+                                        transparent
+                                    );
+                            "
+                        ></div>
+                    </div>
 
-    <figure class="logo-container">
-      <img src="images/WHP_LOGO_PROTOTYPE2.png" alt="Wild Hunt Project Logo" class="logo">
-    </figure>
-    
+                    <div style="position: relative; max-width: 880px">
+                        <!-- logo -->
+                        <div
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                margin-bottom: clamp(28px, 4vh, 46px);
+                                animation: whp-float 7s ease-in-out infinite;
+                            "
+                        >
+                            <div
+                                style="
+                                    position: relative;
+                                    width: clamp(118px, 15vw, 168px);
+                                    aspect-ratio: 1;
+                                "
+                            >
+                                <div
+                                    aria-hidden="true"
+                                    style="
+                                        position: absolute;
+                                        inset: -22%;
+                                        border-radius: 50%;
+                                        background: radial-gradient(
+                                            circle,
+                                            rgba(159, 182, 224, 0.18),
+                                            transparent 65%
+                                        );
+                                        pointer-events: none;
+                                    "
+                                ></div>
+                                <img
+                                    src="images/WHP_LOGO_PROTOTYPE2.png"
+                                    alt="Wild Hunt Project Logo"
+                                    onError="{{ imgError }}"
+                                    style="
+                                        position: relative;
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+                                        border-radius: 50%;
+                                    "
+                                />
+                            </div>
+                        </div>
 
-    <section id="about">
-      <div class="container">
-        <h2>About the Wild Hunt Project</h2>
-        <p>The Wild Hunt Project is a manifesto for action. It exists to support the creation of decentralised, 
-          open organisations where people from many backgrounds come together to hunt down the world’s hardest problems. 
-          A Wild Hunt Problem-Hunter is anyone who chooses purposeful action, blending curiosity, intelligence, wisdom, and collaboration to turn ideas into solutions. 
-          This manifesto offers a clear framework for those who wish to form problem-hunting teams and take part in shaping a more thoughtful, humane future.</p>
-      </div>
-    </section>
+                        <p
+                            style="
+                                font-family:
+                                    &quot;Spline Sans Mono&quot;, monospace;
+                                font-size: clamp(11px, 1.1vw, 13px);
+                                letter-spacing: 0.34em;
+                                text-transform: uppercase;
+                                color: var(--accent);
+                                margin: 0 0 clamp(20px, 3vh, 30px);
+                                opacity: 0.85;
+                            "
+                        >
+                            A&nbsp;Manifesto&nbsp;for&nbsp;Action&nbsp;&middot;&nbsp;MMXXIV
+                        </p>
 
-    <section id="who-am-i">
-      <div class="container">
-        <h2>Who Am I?</h2>
-        <div class="who-content">
-          <!-- Image Flip -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/me1.jpeg" alt="Picture of Me 1">
-              </div>
-              <div class="flip-card-back">
-                <img src="images/me2.jpeg" alt="Picture of Me 2">
-              </div>
+                        <h1
+                            style="
+                                font-family:
+                                    &quot;Cormorant Garamond&quot;, serif;
+                                font-weight: 400;
+                                font-size: clamp(48px, 9vw, 116px);
+                                line-height: 0.96;
+                                letter-spacing: -0.01em;
+                                margin: 0;
+                                color: #f2f6ff;
+                            "
+                        >
+                            Wild&nbsp;Hunt<br /><span
+                                style="
+                                    font-style: italic;
+                                    font-weight: 300;
+                                    color: #d6dff2;
+                                "
+                                >Project</span
+                            >
+                        </h1>
+
+                        <p
+                            style="
+                                font-family:
+                                    &quot;Cormorant Garamond&quot;, serif;
+                                font-style: italic;
+                                font-size: clamp(20px, 2.6vw, 30px);
+                                color: #a9b5cc;
+                                margin: clamp(22px, 3.5vh, 34px) auto 0;
+                                max-width: 30ch;
+                                line-height: 1.4;
+                            "
+                        >
+                            Hunting Problems, Improving Humankind.
+                        </p>
+
+                        <div
+                            style="
+                                display: flex;
+                                gap: 14px;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                margin-top: clamp(34px, 5vh, 48px);
+                            "
+                        >
+                            <a
+                                href="#creed"
+                                style="
+                                    text-decoration: none;
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.16em;
+                                    text-transform: uppercase;
+                                    color: #06080f;
+                                    background: var(--accent);
+                                    padding: 14px 26px;
+                                    border-radius: 2px;
+                                "
+                                style-hover="background:#EAF0FB;"
+                                >Read the Manifest</a
+                            >
+                            <a
+                                href="#join"
+                                style="
+                                    text-decoration: none;
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.16em;
+                                    text-transform: uppercase;
+                                    color: #c7d0e2;
+                                    border: 1px solid rgba(159, 182, 224, 0.3);
+                                    padding: 14px 26px;
+                                    border-radius: 2px;
+                                "
+                                style-hover="border-color:var(--accent); color:#EAF0FB;"
+                                >Walk the Path</a
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        aria-hidden="true"
+                        style="
+                            position: absolute;
+                            bottom: 26px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 8px;
+                            color: #5c6880;
+                            font-family:
+                                &quot;Spline Sans Mono&quot;, monospace;
+                            font-size: 10px;
+                            letter-spacing: 0.3em;
+                        "
+                    >
+                        <span>SCROLL</span>
+                        <span
+                            style="
+                                width: 1px;
+                                height: 34px;
+                                background: linear-gradient(
+                                    to bottom,
+                                    var(--accent),
+                                    transparent
+                                );
+                            "
+                        ></span>
+                    </div>
+                </header>
+
+                <!-- ===== ABOUT ===== -->
+                <section
+                    id="about"
+                    style="
+                        position: relative;
+                        padding: clamp(80px, 13vh, 150px) clamp(20px, 5vw, 64px);
+                        border-top: 1px solid rgba(159, 182, 224, 0.08);
+                    "
+                >
+                    <div
+                        style="
+                            max-width: 1080px;
+                            margin: 0 auto;
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fit,
+                                minmax(280px, 1fr)
+                            );
+                            gap: clamp(28px, 5vw, 72px);
+                            align-items: start;
+                        "
+                    >
+                        <div data-reveal>
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.28em;
+                                    text-transform: uppercase;
+                                    color: var(--accent);
+                                    margin: 0 0 18px;
+                                "
+                            >
+                                I &middot; The Premise
+                            </p>
+                            <h2
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-weight: 400;
+                                    font-size: clamp(34px, 5vw, 58px);
+                                    line-height: 1.04;
+                                    letter-spacing: -0.01em;
+                                    margin: 0;
+                                    color: #eaf0fb;
+                                "
+                            >
+                                About the Wild&nbsp;Hunt Project
+                            </h2>
+                        </div>
+                        <div data-reveal>
+                            <p
+                                style="
+                                    margin: 0;
+                                    font-size: clamp(16px, 1.4vw, 19px);
+                                    line-height: 1.8;
+                                    color: #a6b1c8;
+                                "
+                            >
+                                The Wild Hunt Project is a manifesto for action.
+                                It exists to support the creation of
+                                decentralised, open organisations where people
+                                from many backgrounds come together to hunt down
+                                the world&rsquo;s hardest problems. A Wild Hunt
+                                Problem-Hunter is anyone who chooses purposeful
+                                action, blending curiosity, intelligence,
+                                wisdom, and collaboration to turn ideas into
+                                solutions. This manifesto offers a clear
+                                framework for those who wish to form
+                                problem-hunting teams and take part in shaping a
+                                more thoughtful, humane future.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== WHO AM I ===== -->
+                <section
+                    id="who-am-i"
+                    style="
+                        position: relative;
+                        padding: clamp(80px, 13vh, 150px) clamp(20px, 5vw, 64px);
+                        background: linear-gradient(
+                            180deg,
+                            rgba(159, 182, 224, 0.035),
+                            rgba(159, 182, 224, 0.01)
+                        );
+                        border-top: 1px solid rgba(159, 182, 224, 0.08);
+                    "
+                >
+                    <div style="max-width: 1080px; margin: 0 auto">
+                        <div
+                            data-reveal
+                            style="margin-bottom: clamp(40px, 6vh, 64px)"
+                        >
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.28em;
+                                    text-transform: uppercase;
+                                    color: var(--accent);
+                                    margin: 0 0 16px;
+                                "
+                            >
+                                II &middot; The Signatory
+                            </p>
+                            <h2
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-weight: 400;
+                                    font-size: clamp(34px, 5vw, 58px);
+                                    margin: 0;
+                                    color: #eaf0fb;
+                                "
+                            >
+                                Who Am I?
+                            </h2>
+                        </div>
+
+                        <div
+                            style="
+                                display: grid;
+                                grid-template-columns: repeat(
+                                    auto-fit,
+                                    minmax(260px, 1fr)
+                                );
+                                gap: clamp(36px, 6vw, 72px);
+                                align-items: center;
+                            "
+                        >
+                            <div
+                                data-reveal
+                                style="display: flex; justify-content: center"
+                            >
+                                <div
+                                    style="
+                                        width: min(280px, 72vw);
+                                        aspect-ratio: 1;
+                                        perspective: 1200px;
+                                    "
+                                >
+                                    <div
+                                        class="whp-flip"
+                                        style="
+                                            position: relative;
+                                            width: 100%;
+                                            height: 100%;
+                                            transition: transform 900ms
+                                                cubic-bezier(0.2, 0.7, 0.2, 1);
+                                            transform-style: preserve-3d;
+                                        "
+                                        style-hover="transform:rotateY(180deg);"
+                                    >
+                                        <div
+                                            style="
+                                                position: absolute;
+                                                inset: 0;
+                                                backface-visibility: hidden;
+                                                border-radius: 4px;
+                                                overflow: hidden;
+                                                border: 1px solid
+                                                    rgba(159, 182, 224, 0.2);
+                                                background: linear-gradient(
+                                                    135deg,
+                                                    #0c1019,
+                                                    #11162200
+                                                );
+                                            "
+                                        >
+                                            <div
+                                                style="
+                                                    position: absolute;
+                                                    inset: 0;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-family:
+                                                        &quot;Spline Sans Mono&quot;,
+                                                        monospace;
+                                                    font-size: 11px;
+                                                    letter-spacing: 0.2em;
+                                                    color: #46506a;
+                                                "
+                                            >
+                                                images/me1.jpeg
+                                            </div>
+                                            <img
+                                                src="images/me1.jpeg"
+                                                alt="Portrait"
+                                                onError="{{ imgError }}"
+                                                style="
+                                                    position: absolute;
+                                                    inset: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                "
+                                            />
+                                        </div>
+                                        <div
+                                            style="
+                                                position: absolute;
+                                                inset: 0;
+                                                backface-visibility: hidden;
+                                                transform: rotateY(180deg);
+                                                border-radius: 4px;
+                                                overflow: hidden;
+                                                border: 1px solid
+                                                    rgba(159, 182, 224, 0.2);
+                                                background: linear-gradient(
+                                                    135deg,
+                                                    #0c1019,
+                                                    #11162200
+                                                );
+                                            "
+                                        >
+                                            <div
+                                                style="
+                                                    position: absolute;
+                                                    inset: 0;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-family:
+                                                        &quot;Spline Sans Mono&quot;,
+                                                        monospace;
+                                                    font-size: 11px;
+                                                    letter-spacing: 0.2em;
+                                                    color: #46506a;
+                                                "
+                                            >
+                                                images/me2.jpeg
+                                            </div>
+                                            <img
+                                                src="images/me2.jpeg"
+                                                alt="Portrait"
+                                                onError="{{ imgError }}"
+                                                style="
+                                                    position: absolute;
+                                                    inset: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                "
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-reveal style="max-width: 600px">
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Spline Sans Mono&quot;,
+                                            monospace;
+                                        font-size: clamp(15px, 1.6vw, 19px);
+                                        font-weight: 500;
+                                        color: var(--accent);
+                                        margin: 0 0 24px;
+                                        min-height: 1.4em;
+                                        letter-spacing: 0.04em;
+                                    "
+                                >
+                                    <span>{{ typedName }}</span
+                                    ><span
+                                        style="
+                                            display: inline-block;
+                                            width: 9px;
+                                            animation: whp-blink 1s step-end
+                                                infinite;
+                                            color: var(--accent);
+                                        "
+                                        >|</span
+                                    >
+                                </h3>
+                                <p
+                                    style="
+                                        margin: 0 0 16px;
+                                        font-size: 16px;
+                                        line-height: 1.78;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    &#128187; I am a Venetian&ndash;Irish
+                                    problem-hunter who left Venice (Italy) to
+                                    study computer science and cybersecurity in
+                                    Dublin. That move was less about geography
+                                    and more about direction: I am driven by the
+                                    belief that knowledge, when paired with
+                                    deliberate action, can genuinely improve the
+                                    world we share.
+                                </p>
+                                <p
+                                    style="
+                                        margin: 0 0 16px;
+                                        font-size: 16px;
+                                        line-height: 1.78;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    &#128058; Friends in Italy started calling
+                                    me Wolf long before it became an identity I
+                                    embraced. I was always drawn to problems
+                                    early, not as obstacles, but as things worth
+                                    tracking, understanding, and patiently
+                                    working through. The name stuck because the
+                                    instinct did.
+                                </p>
+                                <p
+                                    style="
+                                        margin: 0 0 16px;
+                                        font-size: 16px;
+                                        line-height: 1.78;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    &#128218; While my formal work lives in
+                                    computer science and cybersecurity, my
+                                    thinking does not stay neatly inside
+                                    disciplinary borders. I take a polymath
+                                    approach to problem-hunting, drawing equally
+                                    from physics, history, literature, and the
+                                    human stories behind systems. The most
+                                    interesting solutions, in my experience,
+                                    emerge where technical rigour meets cultural
+                                    and historical understanding.
+                                </p>
+                                <p
+                                    style="
+                                        margin: 0 0 16px;
+                                        font-size: 16px;
+                                        line-height: 1.78;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    &#129299; Outside the work, I recharge the
+                                    same way many curious minds do: cooking food
+                                    that reminds me where I come from, reading
+                                    widely, playing games that reward strategy
+                                    and patience, and losing time to puzzles,
+                                    chess, and the occasional stream. These are
+                                    not distractions; they are training grounds
+                                    for attention, creativity, and perspective.
+                                </p>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: 16px;
+                                        line-height: 1.78;
+                                        color: #c7d0e2;
+                                        border-left: 2px solid var(--accent);
+                                        padding-left: 20px;
+                                    "
+                                >
+                                    <em
+                                        >I hold close a simple idea, borrowed
+                                        from the fictional character of
+                                        Spider-Man but grounded in reality:
+                                        &ldquo;A hero is just someone who does
+                                        not give up.&rdquo; Problem-hunting, to
+                                        me, is not about bravado or brilliance.
+                                        It is about staying with a problem long
+                                        enough to do right by it. &#128375;</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            data-reveal
+                            style="
+                                margin-top: clamp(44px, 6vh, 64px);
+                                text-align: center;
+                            "
+                        >
+                            <p
+                                style="
+                                    margin: 0 0 16px;
+                                    color: #8a95ad;
+                                    font-size: 15px;
+                                "
+                            >
+                                Feel free to reach out to me fellow
+                                problem-hunters:
+                            </p>
+                            <a
+                                href="mailto:lupusartorias@gmail.com"
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: clamp(15px, 1.8vw, 20px);
+                                    color: #eaf0fb;
+                                    text-decoration: none;
+                                    border-bottom: 1px solid var(--accent);
+                                    padding-bottom: 3px;
+                                "
+                                style-hover="color:var(--accent);"
+                                >lupusartorias@gmail.com</a
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 14px;
+                                    justify-content: center;
+                                    margin-top: 26px;
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 11px;
+                                    letter-spacing: 0.16em;
+                                    text-transform: uppercase;
+                                "
+                            >
+                                <a
+                                    href="https://www.instagram.com/lupus_artorias?igsh=aHhsaTc4b2tuMDBl&utm_source=qr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="
+                                        text-decoration: none;
+                                        color: #94a0b8;
+                                        border: 1px solid
+                                            rgba(159, 182, 224, 0.2);
+                                        padding: 9px 16px;
+                                        border-radius: 2px;
+                                    "
+                                    style-hover="border-color:var(--accent); color:#EAF0FB;"
+                                    >Instagram</a
+                                >
+                                <a
+                                    href="https://ie.linkedin.com/in/matteo-da-venezia"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style="
+                                        text-decoration: none;
+                                        color: #94a0b8;
+                                        border: 1px solid
+                                            rgba(159, 182, 224, 0.2);
+                                        padding: 9px 16px;
+                                        border-radius: 2px;
+                                    "
+                                    style-hover="border-color:var(--accent); color:#EAF0FB;"
+                                    >LinkedIn</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== THE MANIFEST ===== -->
+                <section
+                    id="creed"
+                    style="
+                        position: relative;
+                        padding: clamp(80px, 13vh, 150px) clamp(20px, 5vw, 64px);
+                        border-top: 1px solid rgba(159, 182, 224, 0.08);
+                    "
+                >
+                    <div style="max-width: 1000px; margin: 0 auto">
+                        <div
+                            data-reveal
+                            style="
+                                text-align: center;
+                                margin-bottom: clamp(48px, 7vh, 80px);
+                            "
+                        >
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.28em;
+                                    text-transform: uppercase;
+                                    color: var(--accent);
+                                    margin: 0 0 18px;
+                                "
+                            >
+                                III &middot; The Manifest
+                            </p>
+                            <h2
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-weight: 400;
+                                    font-size: clamp(38px, 6vw, 72px);
+                                    margin: 0;
+                                    color: #eaf0fb;
+                                    line-height: 1;
+                                "
+                            >
+                                The Wild Hunt Manifest
+                            </h2>
+                        </div>
+
+                        <div>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    I
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Purpose with Responsibility
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        A Wild Hunt Problem-Hunter works to
+                                        reduce harm and complexity created by
+                                        unresolved problems, while remaining
+                                        mindful of consequences. Action is
+                                        guided by care, foresight, and an
+                                        understanding that even well-intentioned
+                                        solutions can create new risks. Progress
+                                        is measured not only by what is fixed,
+                                        but by what is protected in the process.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    II
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Solutions Without Fear
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        The practice of problem-hunting must
+                                        never rely on fear, coercion, or
+                                        domination. A Wild Hunt Problem-Hunter
+                                        respects the freedom, dignity, and
+                                        agency of others, recognising that
+                                        lasting solutions cannot be built
+                                        through control or intimidation.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    III
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Legality, Ethics, and Morality
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        A Wild Hunt Problem-Hunter acts within
+                                        the law and is guided by a considered
+                                        ethical compass. Decisions are made with
+                                        respect for justice, fairness, and
+                                        accountability, recognising that
+                                        responsible action requires both moral
+                                        judgement and restraint.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    IV
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Balanced Action
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        Urgency does not justify recklessness. A
+                                        Wild Hunt Problem-Hunter weighs multiple
+                                        options, seeking solutions that address
+                                        immediate needs while accounting for
+                                        long-term consequences and systemic
+                                        effects.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    V
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Humility Over Pride
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        Pride and ego have no place in
+                                        problem-hunting. A Wild Hunt
+                                        Problem-Hunter acts with humility,
+                                        choosing effective responses while
+                                        remaining firmly within ethical, moral,
+                                        and legal boundaries.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    VI
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Preservation of Freedom
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        A Wild Hunt Problem-Hunter maintains
+                                        personal independence and balance,
+                                        ensuring that the work of
+                                        problem-hunting does not overwhelm or
+                                        diminish their life beyond the mission.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    VII
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Zero Tolerance for Unethical Conduct
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        Any Problem-Hunter who engages in
+                                        illegal, unethical, or immoral conduct
+                                        cannot remain part of the Wild Hunt
+                                        Project. Participation is withdrawn to
+                                        protect the integrity of the mission,
+                                        the safety of others, and the values the
+                                        project exists to uphold.
+                                    </p>
+                                </div>
+                            </article>
+                            <article
+                                data-reveal
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        clamp(46px, 7vw, 90px)
+                                        1fr;
+                                    gap: clamp(18px, 3vw, 44px);
+                                    padding: clamp(26px, 3.5vw, 40px) 0;
+                                    border-top: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                    border-bottom: 1px solid
+                                        rgba(159, 182, 224, 0.12);
+                                "
+                            >
+                                <div
+                                    style="
+                                        font-family:
+                                            &quot;Cormorant Garamond&quot;,
+                                            serif;
+                                        font-size: clamp(30px, 4.5vw, 52px);
+                                        font-weight: 300;
+                                        line-height: 0.9;
+                                        color: var(--accent);
+                                        opacity: 0.8;
+                                    "
+                                >
+                                    VIII
+                                </div>
+                                <div>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-weight: 500;
+                                            font-size: clamp(23px, 3vw, 32px);
+                                            margin: 0 0 12px;
+                                            color: #eaf0fb;
+                                            letter-spacing: 0.005em;
+                                        "
+                                    >
+                                        Learn from History
+                                    </h3>
+                                    <p
+                                        style="
+                                            margin: 0;
+                                            max-width: 66ch;
+                                            font-size: clamp(15px, 1.3vw, 17px);
+                                            line-height: 1.78;
+                                            color: #9ca8c0;
+                                        "
+                                    >
+                                        A Wild Hunt Problem-Hunter draws insight
+                                        from history, examining what has worked
+                                        and what has failed before, and applies
+                                        those lessons with creativity and care
+                                        to today&rsquo;s problems.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== FOUNDATIONS ===== -->
+                <section
+                    id="foundations"
+                    style="
+                        position: relative;
+                        padding: clamp(80px, 13vh, 150px) clamp(20px, 5vw, 64px);
+                        background: linear-gradient(
+                            180deg,
+                            rgba(159, 182, 224, 0.04),
+                            rgba(159, 182, 224, 0.01)
+                        );
+                        border-top: 1px solid rgba(159, 182, 224, 0.08);
+                    "
+                >
+                    <div style="max-width: 1080px; margin: 0 auto">
+                        <div
+                            data-reveal
+                            style="
+                                text-align: center;
+                                margin-bottom: clamp(48px, 7vh, 80px);
+                            "
+                        >
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.28em;
+                                    text-transform: uppercase;
+                                    color: var(--accent);
+                                    margin: 0 0 18px;
+                                "
+                            >
+                                IV &middot; The Pillars
+                            </p>
+                            <h2
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-weight: 400;
+                                    font-size: clamp(38px, 6vw, 72px);
+                                    margin: 0;
+                                    color: #eaf0fb;
+                                    line-height: 1;
+                                "
+                            >
+                                Core Foundations
+                            </h2>
+                        </div>
+
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: clamp(28px, 4vh, 44px);
+                            "
+                        >
+                            <article
+                                data-reveal
+                                class="whp-found"
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        minmax(0, 0.85fr)
+                                        minmax(0, 1.4fr);
+                                    gap: clamp(20px, 4vw, 56px);
+                                    align-items: baseline;
+                                    padding: clamp(28px, 4vw, 44px);
+                                    border: 1px solid rgba(159, 182, 224, 0.12);
+                                    border-radius: 4px;
+                                    background: rgba(6, 8, 15, 0.4);
+                                    transition:
+                                        border-color 300ms ease,
+                                        background 300ms ease;
+                                "
+                                style-hover="border-color:rgba(159,182,224,0.4); background:rgba(159,182,224,0.04);"
+                            >
+                                <div>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Spline Sans Mono&quot;,
+                                                monospace;
+                                            font-size: 11px;
+                                            letter-spacing: 0.24em;
+                                            text-transform: uppercase;
+                                            color: var(--accent);
+                                            margin: 0 0 10px;
+                                            opacity: 0.8;
+                                        "
+                                    >
+                                        i
+                                    </p>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-style: italic;
+                                            font-weight: 400;
+                                            font-size: clamp(40px, 6vw, 68px);
+                                            line-height: 0.95;
+                                            margin: 0;
+                                            color: #f2f6ff;
+                                        "
+                                    >
+                                        Astutia
+                                    </h3>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Hanken Grotesk&quot;,
+                                                sans-serif;
+                                            font-size: 14px;
+                                            letter-spacing: 0.02em;
+                                            color: #8a95ad;
+                                            margin: 12px 0 0;
+                                            text-transform: uppercase;
+                                        "
+                                    >
+                                        Collaboration &amp; Community
+                                    </p>
+                                </div>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: clamp(15px, 1.3vw, 17px);
+                                        line-height: 1.8;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    Astutia is the practice of working together
+                                    with intention. Wild Hunt Problem-Hunters
+                                    share solutions openly, not to claim credit,
+                                    but to strengthen collective understanding
+                                    and reduce duplicated effort. Collaboration
+                                    across backgrounds, disciplines, and
+                                    perspectives is treated as a necessity
+                                    rather than a virtue, because complex
+                                    problems rarely yield to isolated thinking.
+                                    Through this shared work, communities are
+                                    formed around responsibility and trust,
+                                    capable of addressing systemic and global
+                                    challenges with resilience rather than
+                                    fragmentation.
+                                </p>
+                            </article>
+
+                            <article
+                                data-reveal
+                                class="whp-found"
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        minmax(0, 0.85fr)
+                                        minmax(0, 1.4fr);
+                                    gap: clamp(20px, 4vw, 56px);
+                                    align-items: baseline;
+                                    padding: clamp(28px, 4vw, 44px);
+                                    border: 1px solid rgba(159, 182, 224, 0.12);
+                                    border-radius: 4px;
+                                    background: rgba(6, 8, 15, 0.4);
+                                    transition:
+                                        border-color 300ms ease,
+                                        background 300ms ease;
+                                "
+                                style-hover="border-color:rgba(159,182,224,0.4); background:rgba(159,182,224,0.04);"
+                            >
+                                <div>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Spline Sans Mono&quot;,
+                                                monospace;
+                                            font-size: 11px;
+                                            letter-spacing: 0.24em;
+                                            text-transform: uppercase;
+                                            color: var(--accent);
+                                            margin: 0 0 10px;
+                                            opacity: 0.8;
+                                        "
+                                    >
+                                        ii
+                                    </p>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-style: italic;
+                                            font-weight: 400;
+                                            font-size: clamp(40px, 6vw, 68px);
+                                            line-height: 0.95;
+                                            margin: 0;
+                                            color: #f2f6ff;
+                                        "
+                                    >
+                                        Ferocies
+                                    </h3>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Hanken Grotesk&quot;,
+                                                sans-serif;
+                                            font-size: 14px;
+                                            letter-spacing: 0.02em;
+                                            color: #8a95ad;
+                                            margin: 12px 0 0;
+                                            text-transform: uppercase;
+                                        "
+                                    >
+                                        Protect &amp; Act
+                                    </p>
+                                </div>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: clamp(15px, 1.3vw, 17px);
+                                        line-height: 1.8;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    Ferocies is the commitment to act when
+                                    inaction would cause harm. Wild Hunt
+                                    Problem-Hunters respond to pressing and
+                                    emerging threats with clarity and resolve,
+                                    prioritising the protection of people over
+                                    hesitation or performative caution. Action
+                                    is taken to reduce suffering in the present,
+                                    while remaining focused on addressing root
+                                    causes so that protection today does not
+                                    create greater risk tomorrow. Ferocies is
+                                    not recklessness; it is the courage to
+                                    intervene thoughtfully when it matters most.
+                                </p>
+                            </article>
+
+                            <article
+                                data-reveal
+                                class="whp-found"
+                                style="
+                                    display: grid;
+                                    grid-template-columns:
+                                        minmax(0, 0.85fr)
+                                        minmax(0, 1.4fr);
+                                    gap: clamp(20px, 4vw, 56px);
+                                    align-items: baseline;
+                                    padding: clamp(28px, 4vw, 44px);
+                                    border: 1px solid rgba(159, 182, 224, 0.12);
+                                    border-radius: 4px;
+                                    background: rgba(6, 8, 15, 0.4);
+                                    transition:
+                                        border-color 300ms ease,
+                                        background 300ms ease;
+                                "
+                                style-hover="border-color:rgba(159,182,224,0.4); background:rgba(159,182,224,0.04);"
+                            >
+                                <div>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Spline Sans Mono&quot;,
+                                                monospace;
+                                            font-size: 11px;
+                                            letter-spacing: 0.24em;
+                                            text-transform: uppercase;
+                                            color: var(--accent);
+                                            margin: 0 0 10px;
+                                            opacity: 0.8;
+                                        "
+                                    >
+                                        iii
+                                    </p>
+                                    <h3
+                                        style="
+                                            font-family:
+                                                &quot;Cormorant Garamond&quot;,
+                                                serif;
+                                            font-style: italic;
+                                            font-weight: 400;
+                                            font-size: clamp(40px, 6vw, 68px);
+                                            line-height: 0.95;
+                                            margin: 0;
+                                            color: #f2f6ff;
+                                        "
+                                    >
+                                        Sapientes
+                                    </h3>
+                                    <p
+                                        style="
+                                            font-family:
+                                                &quot;Hanken Grotesk&quot;,
+                                                sans-serif;
+                                            font-size: 14px;
+                                            letter-spacing: 0.02em;
+                                            color: #8a95ad;
+                                            margin: 12px 0 0;
+                                            text-transform: uppercase;
+                                        "
+                                    >
+                                        Wisdom &amp; Innovation
+                                    </p>
+                                </div>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: clamp(15px, 1.3vw, 17px);
+                                        line-height: 1.8;
+                                        color: #a6b1c8;
+                                    "
+                                >
+                                    Sapientes is the practice of thinking deeply
+                                    before acting boldly. Wild Hunt
+                                    Problem-Hunters pursue creative and
+                                    sustainable solutions by combining
+                                    knowledge, experimentation, and reflection.
+                                    Innovation is treated not as disruption for
+                                    its own sake, but as the careful evolution
+                                    of methods in response to new evidence and
+                                    changing conditions. Through continuous
+                                    learning, testing, and revision,
+                                    problem-hunting techniques improve over time
+                                    rather than stagnate.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== WALK THE PATH ===== -->
+                <section
+                    id="join"
+                    style="
+                        position: relative;
+                        padding: clamp(90px, 15vh, 170px) clamp(20px, 5vw, 64px);
+                        border-top: 1px solid rgba(159, 182, 224, 0.08);
+                        text-align: center;
+                        overflow: hidden;
+                    "
+                >
+                    <div
+                        aria-hidden="true"
+                        style="
+                            position: absolute;
+                            inset: 0;
+                            background: radial-gradient(
+                                700px 380px at 50% 120%,
+                                rgba(159, 182, 224, 0.1),
+                                transparent 70%
+                            );
+                            pointer-events: none;
+                        "
+                    ></div>
+                    <div
+                        style="
+                            position: relative;
+                            max-width: 760px;
+                            margin: 0 auto;
+                        "
+                    >
+                        <div data-reveal>
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Spline Sans Mono&quot;, monospace;
+                                    font-size: 12px;
+                                    letter-spacing: 0.28em;
+                                    text-transform: uppercase;
+                                    color: var(--accent);
+                                    margin: 0 0 18px;
+                                "
+                            >
+                                V &middot; The Invitation
+                            </p>
+                            <h2
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-weight: 400;
+                                    font-size: clamp(40px, 7vw, 84px);
+                                    margin: 0 0 clamp(32px, 5vh, 48px);
+                                    color: #eaf0fb;
+                                    line-height: 1;
+                                "
+                            >
+                                Walk the Path
+                            </h2>
+                        </div>
+                        <div data-reveal style="text-align: left">
+                            <p
+                                style="
+                                    margin: 0 0 20px;
+                                    font-size: clamp(16px, 1.4vw, 18px);
+                                    line-height: 1.8;
+                                    color: #a6b1c8;
+                                "
+                            >
+                                Joining the Wild Hunt Project is simple and open
+                                to anyone who feels aligned with its values.
+                                There are no applications to submit and no
+                                barriers to entry. Participation is voluntary,
+                                self-directed, and shaped by the responsibility
+                                each person chooses to take on.
+                            </p>
+                            <p
+                                style="
+                                    margin: 0 0 20px;
+                                    font-size: clamp(16px, 1.4vw, 18px);
+                                    line-height: 1.8;
+                                    color: #a6b1c8;
+                                "
+                            >
+                                If the purpose, principles, and core foundations
+                                resonate with you, you are already on the path.
+                                You may associate yourself with the project
+                                publicly, for example through a social media
+                                tag, or remain private under a chosen name.
+                                Real-world identities are not required; what
+                                matters is how you act and the care you bring to
+                                the work.
+                            </p>
+                            <p
+                                style="
+                                    margin: 0 0 20px;
+                                    font-size: clamp(16px, 1.4vw, 18px);
+                                    line-height: 1.8;
+                                    color: #a6b1c8;
+                                "
+                            >
+                                You may walk alone or alongside others. Some
+                                problem-hunters form teams, some contribute
+                                quietly, and some move between both. What unites
+                                them is a shared intent to address problems
+                                thoughtfully, uplift humanity, and uphold the
+                                values of the Wild Hunt Project.
+                            </p>
+                            <p
+                                style="
+                                    margin: 0;
+                                    font-size: clamp(16px, 1.4vw, 18px);
+                                    line-height: 1.8;
+                                    color: #a6b1c8;
+                                "
+                            >
+                                This path is not about belonging to a group, but
+                                about choosing a way of working in the world.
+                            </p>
+                        </div>
+                        <div
+                            data-reveal
+                            style="
+                                margin-top: clamp(44px, 6vh, 64px);
+                                padding-top: clamp(36px, 5vh, 52px);
+                                border-top: 1px solid rgba(159, 182, 224, 0.14);
+                            "
+                        >
+                            <p
+                                style="
+                                    font-family:
+                                        &quot;Cormorant Garamond&quot;, serif;
+                                    font-style: italic;
+                                    font-size: clamp(24px, 3.4vw, 38px);
+                                    line-height: 1.35;
+                                    color: #eaf0fb;
+                                    margin: 0;
+                                "
+                            >
+                                &ldquo;The road is shared, the burdens differ,
+                                and the Hunt goes on.&rdquo;
+                                <span style="color: #c9536b">&#10084;</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== FOOTER ===== -->
+                <footer
+                    style="
+                        padding: clamp(48px, 8vh, 80px) clamp(20px, 5vw, 64px);
+                        border-top: 1px solid rgba(159, 182, 224, 0.1);
+                        text-align: center;
+                    "
+                >
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: center;
+                            margin-bottom: 24px;
+                        "
+                    >
+                        <svg
+                            width="34"
+                            height="34"
+                            viewBox="0 0 100 100"
+                            aria-hidden="true"
+                            style="display: block"
+                        >
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="40"
+                                fill="none"
+                                style="stroke: var(--accent)"
+                                stroke-width="1.5"
+                                opacity="0.5"
+                            ></circle>
+                            <path
+                                d="M50 18 L55 45 L82 50 L55 55 L50 82 L45 55 L18 50 L45 45 Z"
+                                style="fill: var(--accent)"
+                                opacity="0.8"
+                            ></path>
+                        </svg>
+                    </div>
+                    <p
+                        style="
+                            margin: 0 0 8px;
+                            font-family: &quot;Cormorant Garamond&quot;, serif;
+                            font-style: italic;
+                            font-size: 20px;
+                            color: #c7d0e2;
+                        "
+                    >
+                        Long live the Wild Hunt Project!
+                    </p>
+                    <p
+                        style="
+                            margin: 0 0 18px;
+                            font-family:
+                                &quot;Spline Sans Mono&quot;, monospace;
+                            font-size: 11px;
+                            letter-spacing: 0.16em;
+                            color: #6b7690;
+                        "
+                    >
+                        &copy; 2024&ndash;2026 Wild Hunt Project &middot; All
+                        Rights Reserved
+                    </p>
+                </footer>
             </div>
-          </div>
-          
-          <!-- About Me Content -->
-          <div class="about-me-text">
-            <h3>
-              <span id="name-animation"></span>
-            </h3>
-            <p>&#128187; I am a Venetian–Irish problem-hunter who left Venice (Italy) to study computer science and cybersecurity in Dublin. That move was less about geography and more about direction: I am driven by the belief that knowledge, when paired with deliberate action, can genuinely improve the world we share.</p>
-            <p>&#128058; Friends in Italy started calling me Wolf long before it became an identity I embraced. I was always drawn to problems early, not as obstacles, but as things worth tracking, understanding, and patiently working through. The name stuck because the instinct did.</p>
-            <p>&#128218; While my formal work lives in computer science and cybersecurity, my thinking does not stay neatly inside disciplinary borders. I take a polymath approach to problem-hunting, drawing equally from physics, history, literature, and the human stories behind systems. The most interesting solutions, in my experience, emerge where technical rigour meets cultural and historical understanding.</p>
-            <p>&#129299; Outside the work, I recharge the same way many curious minds do: cooking food that reminds me where I come from, reading widely, playing games that reward strategy and patience, and losing time to puzzles, chess, and the occasional stream. These are not distractions; they are training grounds for attention, creativity, and perspective.</p>
-            <p><em>I hold close a simple idea, borrowed from the fictional character of Spider-Man but grounded in reality: "A hero is just someone who does not give up." Problem-hunting, to me, is not about bravado or brilliance. It is about staying with a problem long enough to do right by it. &#128375;</em></p>
-          </div>
-        </div>
-        <!-- Contact Email -->
-    <div class="contact-details">
-      <p>Feel free to reach out to me fellow problem-hunters: <a href="mailto:lupusartorias@gmail.com" class="contact-email">lupusartorias@gmail.com</a></p>
-      <div class="social-media-bar">
-        <a href="https://www.instagram.com/lupus_artorias?igsh=aHhsaTc4b2tuMDBl&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
-          <img src="images/instagram-icon.png" alt="Instagram Icon">
-        </a>
-        <a href="https://ie.linkedin.com/in/matteo-da-venezia" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
-          <img src="images/linkedin-icon.png" alt="LinkedIn Icon">
-        </a>
-      </div>
-    </div>
-      </div>
-    </section>
-    
+        </x-dc>
+        <script
+            type="text/x-dc"
+            data-dc-script
+            data-props='{"$preview":{"width":1280,"height":860},"accent":{"editor":"color","default":"#9FB6E0","tsType":"string","options":["#9FB6E0","#C9A86A","#8FB8A6","#B59FE0"],"section":"Theme"},"starfield":{"editor":"boolean","default":true,"tsType":"boolean","section":"Theme"},"nameTyping":{"editor":"boolean","default":true,"tsType":"boolean","section":"Motion"}}'
+        >
+            class Component extends DCLogic {
+              state = { typed: '' };
 
-    <section id="creed">
-        <div class="container">
-          <h2>The Wild Hunt Manifest</h2>
-          <div class="creed-grid">
-            <div class="creed-item">
-              <img src="images/Responsibility.png" alt="Logo for responsibility">
-              <strong>Purpose with Responsibility:</strong>
-              <p>A Wild Hunt Problem-Hunter works to reduce harm and complexity created by unresolved problems, while remaining mindful of consequences. Action is guided by care, foresight, and an understanding that even well-intentioned solutions can create new risks. Progress is measured not only by what is fixed, but by what is protected in the process.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/fear.png" alt="Logo for fear">
-              <strong>Solutions Without Fear:</strong>
-              <p>The practice of problem-hunting must never rely on fear, coercion, or domination. A Wild Hunt Problem-Hunter respects the freedom, dignity, and agency of others, recognising that lasting solutions cannot be built through control or intimidation.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/compass.png" alt="Logo for compass">
-              <strong>Legality, Ethics, and Morality:</strong>
-              <p>A Wild Hunt Problem-Hunter acts within the law and is guided by a considered ethical compass. Decisions are made with respect for justice, fairness, and accountability, recognising that responsible action requires both moral judgement and restraint.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/scale.png" alt="Logo for a scale">
-              <strong>Balanced Action:</strong>
-              <p>Urgency does not justify recklessness. A Wild Hunt Problem-Hunter weighs multiple options, seeking solutions that address immediate needs while accounting for long-term consequences and systemic effects.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/humility.png" alt="Logo for humility">
-              <strong>Humility Over Pride:</strong>
-              <p>Pride and ego have no place in problem-hunting. A Wild Hunt Problem-Hunter acts with humility, choosing effective responses while remaining firmly within ethical, moral, and legal boundaries.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/freedom.png" alt="Logo for freedom">
-              <strong>Preservation of Freedom:</strong>
-              <p>A Wild Hunt Problem-Hunter maintains personal independence and balance, ensuring that the work of problem-hunting does not overwhelm or diminish their life beyond the mission.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/ethics.png" alt="Logo for ethics">
-              <strong>Zero Tolerance for Unethical Conduct:</strong>
-              <p>Any Problem-Hunter who engages in illegal, unethical, or immoral conduct cannot remain part of the Wild Hunt Project. Participation is withdrawn to protect the integrity of the mission, the safety of others, and the values the project exists to uphold.</p>
-            </div>
-            <div class="creed-item">
-              <img src="images/museum.png" alt="Logo for history">
-              <strong>Learn from History:</strong>
-              <p>A Wild Hunt Problem-Hunter draws insight from history, examining what has worked and what has failed before, and applies those lessons with creativity and care to today’s problems.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+              componentDidMount() {
+                this._mounted = true;
+                this._reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                this.applyAccent();
+                this.applyStarfield();
+                this.setupReveals();
+                this.startTyping();
+              }
 
-      <section id="foundations">
-        <div class="container">
-          <h2>Core Foundations</h2>
-          <div class="foundations-grid">
-            <div class="foundation-item">
-              <img src="images/astutia.png" alt="icon for cunningness color symbol">
-              <h3>Astutia - Collaboration and Community</h3>
-              <p>
-                Astutia is the practice of working together with intention. Wild Hunt Problem-Hunters share solutions openly, not to claim credit, 
-                but to strengthen collective understanding and reduce duplicated effort. 
-                Collaboration across backgrounds, disciplines, and perspectives is treated as a necessity rather than a virtue, 
-                because complex problems rarely yield to isolated thinking. Through this shared work, communities are formed around responsibility and trust, 
-                capable of addressing systemic and global challenges with resilience rather than fragmentation.
-              </p>
-            </div>
-            <div class="foundation-item">
-              <img src="images/ferocity.png" alt="icon for ferocity color symbol">
-              <h3>Ferocies - Protect and Act</h3>
-              <p>
-                Ferocies is the commitment to act when inaction would cause harm. 
-                Wild Hunt Problem-Hunters respond to pressing and emerging threats with clarity and resolve, 
-                prioritising the protection of people over hesitation or performative caution. Action is taken to reduce suffering in the present, 
-                while remaining focused on addressing root causes so that protection today does not create greater risk tomorrow. 
-                Ferocies is not recklessness; it is the courage to intervene thoughtfully when it matters most.
-              </p>
-            </div>
-            <div class="foundation-item">
-              <img src="images/wisdom.png" alt="icon for wisdom color symbol">
-              <h3>Sapientes - Wisdom and Innovation</h3>
-              <p>
-                Sapientes is the practice of thinking deeply before acting boldly. 
-                Wild Hunt Problem-Hunters pursue creative and sustainable solutions by combining knowledge, experimentation, and reflection. 
-                Innovation is treated not as disruption for its own sake, but as the careful evolution of methods in response to new evidence and changing conditions. 
-                Through continuous learning, testing, and revision, problem-hunting techniques improve over time rather than stagnate.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+              componentDidUpdate() {
+                this.applyAccent();
+                this.applyStarfield();
+              }
 
-      <section id="join">
-        <div class="container">
-          <h2>Walk the Path</h2>
-          <p>Joining the Wild Hunt Project is simple and open to anyone who feels aligned with its values. There are no applications to submit and no barriers to entry. Participation is voluntary, self-directed, and shaped by the responsibility each person chooses to take on.</p>
-          <p>If the purpose, principles, and core foundations resonate with you, you are already on the path. You may associate yourself with the project publicly, for example through a social media tag, or remain private under a chosen name. Real-world identities are not required; what matters is how you act and the care you bring to the work.</p>
-          <p>You may walk alone or alongside others. Some problem-hunters form teams, some contribute quietly, and some move between both. What unites them is a shared intent to address problems thoughtfully, uplift humanity, and uphold the values of the Wild Hunt Project.</p>
-          <p>This path is not about belonging to a group, but about choosing a way of working in the world.</p>
-          <div class="join-manifest">
-            <p><em>The road is shared, the burdens differ, and the Hunt goes on.</em> ❤️</p>
-          </div>
-        </div>
-      </section>
-      
+              componentWillUnmount() {
+                this._mounted = false;
+                if (this._t) clearTimeout(this._t);
+                if (this._io) this._io.disconnect();
+              }
 
+              applyAccent() {
+                const a = this.props.accent || '#9FB6E0';
+                document.body.style.setProperty('--accent', a);
+              }
 
-  </main>
+              applyStarfield() {
+                const on = this.props.starfield !== false;
+                document.querySelectorAll('[data-starfield]').forEach(el => { el.style.display = on ? '' : 'none'; });
+              }
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024-2026 Wild Hunt Project. All Rights Reserved.</p>
-      <p>Long live the Wild Hunt Project!</p>
-      <p><a href="attributions.html">Icon Attributions</a></p>
-    </div>
-  </footer>
+              setupReveals() {
+                const items = Array.from(document.querySelectorAll('[data-reveal]'));
+                if (!items.length) return;
+                if (this._reduce || !('IntersectionObserver' in window)) return;
+                items.forEach(el => {
+                  el.style.opacity = '0';
+                  el.style.transform = 'translateY(22px)';
+                  el.style.transition = 'opacity 800ms cubic-bezier(.2,.7,.2,1), transform 800ms cubic-bezier(.2,.7,.2,1)';
+                  el.style.willChange = 'opacity, transform';
+                });
+                this._io = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.style.opacity = '1';
+                      entry.target.style.transform = 'translateY(0)';
+                      this._io.unobserve(entry.target);
+                    }
+                  });
+                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                items.forEach(el => this._io.observe(el));
+              }
 
-  <script src="script.js"></script>
+              startTyping() {
+                const full = 'Matteo Lupus Da Venezia McCormack';
+                if (this.props.nameTyping === false || this._reduce) {
+                  this.setState({ typed: full });
+                  return;
+                }
+                const names = [full, 'Lupus Artorias'];
+                let index = 0, letter = 0, deleting = false;
+                const tick = () => {
+                  if (!this._mounted) return;
+                  const current = names[index];
+                  letter += deleting ? -1 : 1;
+                  this.setState({ typed: current.substring(0, letter) });
+                  if (!deleting && letter === current.length) {
+                    deleting = true;
+                    this._t = setTimeout(tick, 1500);
+                    return;
+                  }
+                  if (deleting && letter === 0) {
+                    deleting = false;
+                    index = (index + 1) % names.length;
+                    this._t = setTimeout(tick, 500);
+                    return;
+                  }
+                  this._t = setTimeout(tick, deleting ? 55 : 95);
+                };
+                this._t = setTimeout(tick, 600);
+              }
 
-</body>
+              renderVals() {
+                return {
+                  typedName: this.state.typed,
+                  imgError: (e) => { if (e && e.target) e.target.style.visibility = 'hidden'; }
+                };
+              }
+            }
+        </script>
+    </body>
 </html>
