@@ -30,7 +30,6 @@ The project does not promise easy answers. It provides a **moral and practical f
 This repository contains a static website built with simplicity and longevity in mind.
 
 - `index.html` – Main site: Overview, Manifesto, Core Foundations, Walk the Path  
-- `attributions.html` – Credits and icon attributions  
 - `styles.css` – Responsive layout with light and dark mode  
 - `script.js` – Behavioural logic (theme toggle, accessibility helpers)  
 - `images/` – Logos and visual assets  
